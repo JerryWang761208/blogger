@@ -857,8 +857,11 @@ I would love to write a diary in English everyday.
 By using hexo as my blog generator is so funny and exciting.</p>
 <p>When I push my article to Github, I need to do </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g &amp;&amp; hexo d</div></pre></td></tr></table></figure>
-<h3 id="And-I-am-very-lazy-I-put-script-in-package-json-which-is-the-following"><a href="#And-I-am-very-lazy-I-put-script-in-package-json-which-is-the-following" class="headerlink" title="And I am very lazy, I put script in package.json which is the following"></a>And I am very lazy, I put script in <strong>package.json</strong> which is the following</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>:&#123;</div><div class="line">    <span class="string">"deploy"</span>: <span class="string">"hexo g &amp;&amp; hexo d"</span></div><div class="line">  &#125;</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"></div><div class="line">### And now I just need to type in one line:</div><div class="line"></div><div class="line">`<span class="string">``</span> bash</div><div class="line">$ npm run deploy</div></pre></td></tr></table></figure>
-
+<h3 id="And-I-am-very-lazy-I-put-script-in-package-json-which-is-the-following"><a href="#And-I-am-very-lazy-I-put-script-in-package-json-which-is-the-following" class="headerlink" title="And I am very lazy, I put script in package.json which is the following"></a>And I am very lazy, I put script in <strong>package.json</strong> which is the following</h3><pre><code class="javascript"><span class="string">"scripts"</span>:{
+    <span class="string">"deploy"</span>: <span class="string">"hexo g &amp;&amp; hexo d"</span>
+  }
+</code></pre>
+<h3 id="And-now-I-just-need-to-type-in-one-line"><a href="#And-now-I-just-need-to-type-in-one-line" class="headerlink" title="And now I just need to type in one line:"></a>And now I just need to type in one line:</h3>
           
         
       
