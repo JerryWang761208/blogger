@@ -96,7 +96,7 @@ is php.
 I&amp;#39;m writing iOS project using Objective-c and server side
 is php.
 1234567891011121314151617181920212223242526UIImage *image = [UIImage imageNamed:@&amp;quot;joker">
-<meta property="og:updated_time" content="2016-12-28T10:52:53.000Z">
+<meta property="og:updated_time" content="2016-12-28T10:56:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[iOS & php] upload images to server">
 <meta name="twitter:description" content="Images uploading is general for user.
@@ -196,7 +196,7 @@ is php.
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -206,7 +206,7 @@ is php.
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -286,7 +286,7 @@ is php.
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-28T18:46:39+08:00">
                 2016-12-28
@@ -327,9 +327,13 @@ is php.
         <p>Images uploading is general for user.</p>
 <p>I&#39;m writing iOS project using Objective-c and server side
 is php.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">UIImage *image = [UIImage imageNamed:@&quot;joker.png&quot;];  // name of the image</div><div class="line"> </div><div class="line"> NSData *imageData =  UIImagePNGRepresentation(image);  // convert your image into data</div><div class="line"> </div><div class="line"> NSString *urlString = [NSString stringWithFormat:@&quot;YOUR URL&quot;];  // enter your url to upload</div><div class="line">  </div><div class="line"> AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];  // allocate AFHTTPManager</div><div class="line"> </div><div class="line"> [manager POST:urlString parameters:nil constructingBodyWithBlock:^(id&lt;AFMultipartFormData&gt; formData) &#123;  // POST DATA USING MULTIPART CONTENT TYPE</div><div class="line">     [formData appendPartWithFileData:imageData</div><div class="line">                                 name:@&quot;yourParameter&quot;</div><div class="line">                             fileName:@&quot;image.jpg&quot; mimeType:@&quot;image/jpeg&quot;];   // add image to formData</div><div class="line">     </div><div class="line">     [formData appendPartWithFormData:[@&quot;sdsd&quot; dataUsingEncoding:NSUTF8StringEncoding]</div><div class="line">                                 name:@&quot;key1&quot;];    // add your other keys !!! </div><div class="line">   </div><div class="line"> &#125; progress:nil success:^(NSURLSessionDataTask *task, id responseObject) &#123;</div><div class="line">     NSLog(@&quot;Response: %@&quot;, responseObject);    // Get response from the server</div><div class="line">     </div><div class="line">     </div><div class="line">     </div><div class="line"> &#125; failure:^(NSURLSessionDataTask *task, NSError *error) &#123;</div><div class="line">     NSLog(@&quot;Error: %@&quot;, error);   // Gives Error</div><div class="line">   </div><div class="line"> &#125;]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">UIImage *image = [UIImage imageNamed:@&quot;joker.png&quot;];  // name of the image</div><div class="line"> </div><div class="line"> NSData *imageData =  UIImagePNGRepresentation(image);  // convert your image into data</div><div class="line"> </div><div class="line"> NSString *urlString = [NSString stringWithFormat:@&quot;YOUR URL&quot;];  // enter your url to upload</div><div class="line">  </div><div class="line"> AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];  // allocate AFHTTPManager</div><div class="line"> </div><div class="line"> [manager POST:urlString parameters:nil constructingBodyWithBlock:^(id&lt;AFMultipartFormData&gt; formData) &#123;  // POST DATA USING MULTIPART CONTENT TYPE</div><div class="line">     [formData appendPartWithFileData:imageData</div><div class="line">                                 name:@&quot;file&quot;</div><div class="line">                             fileName:@&quot;image.jpg&quot; mimeType:@&quot;image/jpeg&quot;];   // add image to formData</div><div class="line">     </div><div class="line">     [formData appendPartWithFormData:[@&quot;sdsd&quot; dataUsingEncoding:NSUTF8StringEncoding]</div><div class="line">                                 name:@&quot;key1&quot;];    // add your other keys !!! </div><div class="line">   </div><div class="line"> &#125; progress:nil success:^(NSURLSessionDataTask *task, id responseObject) &#123;</div><div class="line">     NSLog(@&quot;Response: %@&quot;, responseObject);    // Get response from the server</div><div class="line">     </div><div class="line">     </div><div class="line">     </div><div class="line"> &#125; failure:^(NSURLSessionDataTask *task, NSError *error) &#123;</div><div class="line">     NSLog(@&quot;Error: %@&quot;, error);   // Gives Error</div><div class="line">   </div><div class="line"> &#125;]</div></pre></td></tr></table></figure>
+<p>credit for : <a href="http://codeobjectivec.blogspot.tw/2016/04/upload-image-file-to-server-in-ios.html" target="_blank" rel="external">link</a> </p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//images upload ios</span></div><div class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">upload_photo</span><span class="params">()</span> </span>&#123;</div><div class="line">		$id = <span class="keyword">$this</span> -&gt; get_post(<span class="string">'member_id'</span>);</div><div class="line"></div><div class="line">		$json_data = <span class="keyword">array</span>();</div><div class="line">		$info = <span class="string">''</span>;</div><div class="line"></div><div class="line">		$name = $_FILES[<span class="string">'file'</span>][<span class="string">'name'</span>];</div><div class="line">		$tmp_name = $_FILES[<span class="string">'file'</span>][<span class="string">'tmp_name'</span>];</div><div class="line">		$type = $_FILES[<span class="string">'file'</span>][<span class="string">'type'</span>];</div><div class="line">		$size = $_FILES[<span class="string">'file'</span>][<span class="string">'size'</span>];</div></pre></td></tr></table></figure>
 <p>forgive me the php part, it&#39;s my company project which is privacy.</p>
+<p>Just beware that </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">name:@<span class="string">"file"</span>   $_FILES[<span class="string">'file'</span>]</div></pre></td></tr></table></figure>
+<p>the name &quot;file&quot; should be the same.</p>
 <p>And while in Android, you should use base64 in php.</p>
 
       
@@ -427,7 +431,7 @@ is php.</p>
             <div class="site-state-item site-state-posts">
               <a href="/blogger/archives">
                 <span class="site-state-item-count">7</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -479,7 +483,7 @@ is php.</p>
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
